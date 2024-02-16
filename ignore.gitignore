@@ -1,0 +1,8 @@
+*.py
+*~
+__pycache__
+env
+db.aqlite3
+/static
+.DS_store
+images

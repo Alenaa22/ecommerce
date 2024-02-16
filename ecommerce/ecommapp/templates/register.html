@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body class="d-flex vw-100 vh-100 align-items-center justify-content-center">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit">
+        {% if messages %}
+        {% for m in messages %}
+    
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          <strong>
+            {{m}}
+          </strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>  
+        {% endif %}
+        {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <strong>
+          {{m}}
+        </strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>  
+      {% endif %}
+        {% endfor %}
+    {% endif %}
+
+
+
+    </form>
+    
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
